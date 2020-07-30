@@ -25,7 +25,7 @@ SECRET_KEY = "=hfmw69$&nwlnrvmn$t^6eu$ab+2rtxd*=n#jhb&7jm!1j^$t2"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['phatakp.pythonanywhere.com']
+ALLOWED_HOSTS = ["phatakp.pythonanywhere.com"]
 
 
 # Application definition
@@ -120,3 +120,8 @@ STATIC_URL = "/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+try:
+    from .local_settings import *
+except ImportError:
+    print("No Local Settings. You are in Prod!!")
