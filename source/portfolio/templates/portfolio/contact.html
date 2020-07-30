@@ -1,0 +1,164 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+Portfolio | Contact
+{% endblock title %}
+
+{% block stylesheet %}
+<link href="{% static 'portfolio/css/style.css' %}" rel="stylesheet">
+{% endblock stylesheet %}
+
+{% block header-content %}
+{% include 'portfolio/navbar.html' %}
+<div class="view intro" style="background: url('/static/portfolio/images/pagebar.jpg') no-repeat center center;">
+    <div class="full-bg-img">
+        <div class="mask flex-center">
+            <div class="page-head-container col-md-6 text-right pr-5 white-text wow zoomIn slow">
+                <h2 class="page-header">Contact Me</h2>
+                <div class="page-container ml-auto">
+                    <small>Home</small>
+                    <small>Contact</small>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock header-content %}
+
+
+
+{% block main-content %}
+<!-- <section class="bg-contact100" style="background-image: url('/static/portfolio/images/pagebar.jpimages/bg-01.jpg');">
+    <div class="container-contact100">
+        <div class="wrap-contact100">
+            <div class="contact100-pic js-tilt" data-tilt>
+                <img src="images/img-01.png" alt="IMG">
+            </div>
+
+            <form class="contact100-form validate-form">
+                <span class="contact100-form-title">
+                    Get in touch
+                </span>
+
+                <div class="wrap-input100 validate-input" data-validate="Name is required">
+                    <input class="input100" type="text" name="name" placeholder="Name">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                    </span>
+                </div>
+
+                <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                    <input class="input100" type="text" name="email" placeholder="Email">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                    </span>
+                </div>
+
+                <div class="wrap-input100 validate-input" data-validate="Message is required">
+                    <textarea class="input100" name="message" placeholder="Message"></textarea>
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="container-contact100-form-btn">
+                    <button class="contact100-form-btn">
+                        Send
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div> -->
+
+<section class="contact-area" style="background: url('/static/portfolio/images/timeline.jpg') no-repeat center center;">
+    <div class="container m-auto">
+        <div class="row d-flex flex-center mb-5">
+            <h2>Get in Touch</h2>
+        </div>
+        <div class="row">
+            <div class="contact-info col-md-4 mr-4">
+                <img src="{% static 'portfolio/images/img-01.png' %}" class="img-fluid" alt="">
+
+                <div class="item-wrapper mb-4 wow zoomIn slow">
+                    <div class="item d-flex">
+                        <div class="item-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <div class="item-title mt-0 ml-3">
+                            <p>Pune, India</p>
+                            <small class="pt-0">Kharadi</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item-wrapper mb-4 wow zoomIn slow">
+                    <div class="item d-flex">
+                        <div class="item-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="item-title mt-0 ml-3">
+                            <p>+91 9130-469-142</p>
+                            <small class="pt-0">Mon to Fri- 9:00 AM to 6:00 PM</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item-wrapper wow mb-4 zoomIn slow">
+                    <div class="item d-flex">
+                        <div class="item-icon">
+                            <i class="far fa-envelope"></i>
+                        </div>
+                        <div class="item-title mt-0 ml-3">
+                            <p>praveenphatak@gmail.com</p>
+                            <small class="pt-0">Send us the query anytime soon!</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-6 col-sm-12 px-3 mr-3">
+                <!-- Material form login -->
+
+                {% if message %}
+                <div class="jumbotron text-center my-5">
+                    {{message|safe}}
+                </div>
+
+
+                {% else %}
+                <div class="card mt-5 animated wow zoomIn data-wow-delay='0.4s'">
+                    <h5 class="card-header text-center py-3">
+                        <strong>Connect</strong>
+                    </h5>
+                    <!--Card content-->
+                    <div class="card-body px-lg-5">
+                        <!-- Form -->
+                        <form method="POST" style="color: #757575;">
+                            {% csrf_token %}
+                            {{form|crispy}}
+                            <!-- Sign in button -->
+                            <input type="hidden" name="next" value="{{ next }}" />
+                            <button class="btn purple-gradient mt-5" type="submit">Submit</button>
+
+                        </form>
+                    </div>
+                </div>
+                {% endif %}
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+</section>
+
+
+{% endblock main-content %}

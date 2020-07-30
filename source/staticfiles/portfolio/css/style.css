@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&family=Work+Sans&display=swap');
+
+html,
+body,
+header,
+.view {
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar {
+    background-color: transparent;
+}
+
+.nav-link,
+#navbarDropdownPortfolio {
+    font-family: 'Roboto', sans-serif;
+    font-size: 95%;
+    letter-spacing: 1px;
+    margin-right: 2rem;
+    color: #e6e9ee;
+}
+
+#navbarDropdownPortfolio::after {
+    display: none;
+}
+
+.nav-link:hover,
+.nav-link:focus,
+#navbarDropdownPortfolio:hover,
+#navbarDropdownPortfolio:focus {
+    color: #f0cd0a;
+}
+
+.dropdown-menu {
+    color: black;
+    background-color: #f0cd0a;
+}
+
+.dropdown-item {
+    font-family: 'Roboto', sans-serif;
+    font-size: 80%;
+    letter-spacing: 0.8px;
+    line-height: 1rem;
+    transition: all 0.5s ease-in-out;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+    background-color: white;
+}
+
+
+.top-nav-collapse {
+    background-color: #000000;
+}
+
+.name {
+    font-size: 320%;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.hr-light {
+    width: 50%;
+    border-top: 5px solid #e45447;
+}
+
+@media only screen and (max-width: 768px) {
+    .navbar {
+    background-color: #000000;
+    }
+    .name {
+        font-size: 220%;
+    }
+
+}

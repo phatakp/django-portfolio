@@ -1,0 +1,251 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+
+{% block title %}
+Portfolio | About
+{% endblock title %}
+
+{% block stylesheet %}
+<link href="{% static 'portfolio/css/style.css' %}" rel="stylesheet">
+{% endblock stylesheet %}
+
+{% block header-content %}
+{% include 'portfolio/navbar.html' %}
+<div class="view intro" style="background: url('/static/portfolio/images/pagebar.jpg') no-repeat center center;">
+    <div class="full-bg-img">
+        <div class="mask flex-center">
+            <div class="page-head-container col-md-6 text-right pr-5 white-text wow zoomIn slow">
+                <h2 class="page-header">About Myself</h2>
+                <div class="page-container ml-auto">
+                    <small>Home</small>
+                    <small>About</small>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock header-content %}
+
+
+
+{% block main-content %}
+<section class="work-area" style="background: url('/static/portfolio/images/intro.jpg') no-repeat center center;">
+    <div class="container-fluid align-middle">
+        <div class="row">
+            <div class="view overlay zoom col-md-4 offset-md-1 align-middle">
+                <img src="{% static 'portfolio/images/dp.jpg' %}" class="img-fluid rounded-circle" alt="zoom">
+            </div>
+            <div class="col-md-5 ml-md-2 align-middle wow zoomIn">
+                <h2>Introduction</h2>
+                <hr class="hr-light">
+                <p class="mt-md-4" align="justify">IT Professional with 14+ years of experience in Application
+                    Development. Started my career as a Mainframe COBOL developer, but got sucked into the realm of web
+                    development
+                    after developing an interest in Python-Django. Still learning the many intricacies of HTML, CSS,
+                    JavaScript.
+                    I have experience in multiple financial domains like Capital Markets, Investment Banking (Wealth
+                    Management)
+                    and Retail Banking.
+                </p>
+                <p>My ultimate aim with this exercise is to convert my learning into experience with a prestigious firm.
+                </p>
+                <hr class="text-dark">
+                <div class="contact">
+                    <h5>CONTACT DETAILS</h5>
+                    <hr class="hr-light">
+                    <p class="mt-2"><strong>Name:</strong> Praveen Phatak</p>
+                    <p class="mt-0 pt-0"><strong>Current City:</strong> Pune, India</p>
+                    <p class="mt-0 pt-0"><strong>Phone:</strong> 9130469142</p>
+                    <p class="mt-0 pt-0"><strong>Email:</strong> praveenphatak@gmail.com</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="skills-area">
+    <div class="container m-auto">
+        <div class="row d-flex flex-center mb-5">
+            <h2>Skills to Offer</h2>
+        </div>
+        <div class="row d-flex flex-center">
+            <div class="col-md-3 skill-col">
+                <div class="item-wrapper wow slideInLeft">
+                    <div class="item d-flex">
+                        <div class="item-icon">
+                            <i class="fas fa-city"></i>
+
+                        </div>
+                        <div class="item-title d-flex flex-column">
+                            <h3>MAINFRAME DEVELOPMENT</h3>
+                            <small>COBOL, JCL, CICS, VSAM</small>
+                           
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item-wrapper wow slideInLeft slow">
+                    <div class="item d-flex">
+                        <div class="item-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <div class="item-title d-flex flex-column">
+                            <h3>PROGRAMMING LANGUAGES</h3>
+                            <small>Python</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item-wrapper wow slideInLeft slower">
+                    <div class="item d-flex">
+                        <div class="item-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="item-title d-flex flex-column">
+                            <h3>DATABASES</h3>
+                            <small>IBM-DB2, SQLite, MySQL</small>
+                       
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item-wrapper wow slideInLeft slower delay-1s">
+                    <div class="item d-flex">
+                        <div class="item-icon">
+                            <i class="far fa-chart-bar"></i>
+                        </div>
+                        <div class="item-title">
+                            <h3>ANALYTICAL</h3>
+                            <small>Business Analysis, Agile Scrum</small>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="skill-img col-md-5 wow fadeInUp">
+                <img src="{% static 'portfolio/images/skills.png' %}" class="img-fluid" alt="">
+            </div>
+
+            <div class="col-md-3 align-middle">
+                <div class="item-wrapper wow slideInRight">
+                    <div class="item d-flex">
+                        <div class="item-icon">
+                            <i class="fas fa-tv"></i>
+                        </div>
+                        <div class="item-title d-flex flex-column">
+                            <h3>WEB DEVELOPMENT</h3>
+                            <small>HTML5, CCS3, JavaScript</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item-wrapper wow slideInRight slow">
+                    <div class="item d-flex">
+                        <div class="item-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="item-title d-flex flex-column">
+                            <h3>WEB FRAMEWORK</h3>
+                            <small>Django</small>
+
+                        </div>
+                    </div>
+
+                    <div class="item-wrapper wow slideInRight slower">
+                        <div class="item d-flex">
+                            <div class="item-icon">
+                                <i class="fab fa-keycdn"></i>
+                            </div>
+                            <div class="item-title d-flex flex-column">
+                                <h3>PRODUCTS</h3>
+                                <small>MQ-Series, Denodo, Tableau</small>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="item-wrapper wow slideInRight slower delay-1s">
+                        <div class="item d-flex">
+                            <div class="item-icon">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <div class="item-title">
+                                <h3>CERTIFICATIONS</h3>
+                                <small>IBM DB2 Certified Associate, PSM-1, MTA Python Certified</small>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+</section>
+
+<section class="project-area" style="background: url('/static/portfolio/images/timeline.jpg') no-repeat center center;">
+    <div class="container m-auto">
+        <div class="row d-flex flex-center mb-5">
+            <h2>Career Timeline</h2>
+        </div>
+        <div class="timeline m-auto">
+            <div class="time-container left wow zoomIn slow">
+                <div class="content peach-gradient">
+                    <h5>UBS Business Solutions India</h5>
+                    <hr>
+                    <blockquote>
+                        <h6>Designation: <small>Authorized Officer</small></h6>
+                        <small>Dec-2017 to Present</small </blockquote> <ul class="mt-3">
+                        <li><small>Involved in Legacy Modernization Initatives (WMAP) and
+                                implementing automation scripts.</small>
+                        </li>
+                        </ul>
+
+                </div>
+            </div>
+            <div class="time-container right wow zoomIn slow delay-1s">
+                <div class="content peach-gradient">
+                    <h5>HSBC Technology India</h5>
+                    <hr>
+                    <blockquote>
+                        <h6>Designation: <small>Consultant Specialist</small></h6>
+                        <small>Oct-2016 to Dec 2017</small>
+                    </blockquote>
+                    <ul class="mt-3">
+                        <li><small>Involved in firmwide initiative of consolidation and
+                                integration of segregated banking applications into centralized
+                                HSBC platform.</small></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="time-container left wow zoomIn slow delay-2s">
+                <div class="content peach-gradient">
+                    <h5>Tata Consultancy Services</h5>
+                    <hr>
+                    <blockquote>
+                        <h6>Designation: <small>Assistant Consultant</small></h6>
+                        <small>Sep-2006 to Oct-2016</small>
+                    </blockquote>
+                    <ul class="mt-3">
+                        <li><small>Worked as Consultant for Morgan Stanley, leading and managing several
+                                change requests like Wire Transfer Automation, Same day ACH, Remote Check Deposit
+                                and Dodd Frank Act regulation.
+                            </small></li>
+                        <br>
+                        <li><small>Worked on various technology initiatives like VSAM to DB2 migration &
+                                Performance Optimization of EOD batch cycle.
+                            </small></li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+</section>
+
+{% endblock main-content %}
