@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = "=hfmw69$&nwlnrvmn$t^6eu$ab+2rtxd*=n#jhb&7jm!1j^$t2"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['phatakp.pythonanywhere.com']
 
 
 # Application definition
