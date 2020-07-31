@@ -4,3 +4,4 @@
 __pycache__/
 local_settings.py
 source/static/
+.env
