@@ -528,9 +528,10 @@ body,
 
 /* ##################  CONTACT FORM  ##################### */
 .contact-area {
-    padding: 5em 0;
+    padding: 3em 0;
     justify-content: center;
     font-family: 'Maven Pro', sans-serif;
+    background-color: transparent;
 }
 
 .contact-area h2 {
@@ -563,12 +564,20 @@ body,
 }
 
 .contact-area .item-title small {
-    color: rgb(196, 182, 165);
+    color: rgb(126, 112, 95);
+}
+
+.card {
+    background: linear-gradient(40deg, #846ADD, #ffffff);
 }
 
 .jumbotron {
     color: #1a1818;
     background: linear-gradient(40deg, #846ADD, #ffffff);
+}
+
+.messages {
+    list-style: none;
 }
 
 #norton-idsafe-field-styling-divId {

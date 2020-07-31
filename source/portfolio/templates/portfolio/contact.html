@@ -32,59 +32,16 @@ Portfolio | Contact
 
 
 {% block main-content %}
-<!-- <section class="bg-contact100" style="background-image: url('/static/portfolio/images/pagebar.jpimages/bg-01.jpg');">
-    <div class="container-contact100">
-        <div class="wrap-contact100">
-            <div class="contact100-pic js-tilt" data-tilt>
-                <img src="images/img-01.png" alt="IMG">
-            </div>
-
-            <form class="contact100-form validate-form">
-                <span class="contact100-form-title">
-                    Get in touch
-                </span>
-
-                <div class="wrap-input100 validate-input" data-validate="Name is required">
-                    <input class="input100" type="text" name="name" placeholder="Name">
-                    <span class="focus-input100"></span>
-                    <span class="symbol-input100">
-                        <i class="fa fa-user" aria-hidden="true"></i>
-                    </span>
-                </div>
-
-                <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-                    <input class="input100" type="text" name="email" placeholder="Email">
-                    <span class="focus-input100"></span>
-                    <span class="symbol-input100">
-                        <i class="fa fa-envelope" aria-hidden="true"></i>
-                    </span>
-                </div>
-
-                <div class="wrap-input100 validate-input" data-validate="Message is required">
-                    <textarea class="input100" name="message" placeholder="Message"></textarea>
-                    <span class="focus-input100"></span>
-                </div>
-
-                <div class="container-contact100-form-btn">
-                    <button class="contact100-form-btn">
-                        Send
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div> -->
-
 <section class="contact-area" style="background: url('/static/portfolio/images/timeline.jpg') no-repeat center center;">
     <div class="container m-auto">
-        <div class="row d-flex flex-center mb-5">
+        <div class="row d-flex flex-center flex-column mb-5">
             <h2>Get in Touch</h2>
+            <img src="{% static 'portfolio/images/img-01.png' %}" class="img-fluid" alt="">
         </div>
-        <div class="row">
-            <div class="contact-info col-md-4 mr-4">
-                <img src="{% static 'portfolio/images/img-01.png' %}" class="img-fluid" alt="">
 
-                <div class="item-wrapper mb-4 wow zoomIn slow">
+        <div class="row">
+            <div class="contact-info col-md-5 mt-5">
+                <div class="item-wrapper mb-4 pt-5">
                     <div class="item d-flex">
                         <div class="item-icon">
                             <i class="fas fa-home"></i>
@@ -96,7 +53,7 @@ Portfolio | Contact
                     </div>
                 </div>
 
-                <div class="item-wrapper mb-4 wow zoomIn slow">
+                <div class="item-wrapper mb-4">
                     <div class="item d-flex">
                         <div class="item-icon">
                             <i class="fas fa-phone"></i>
@@ -108,7 +65,7 @@ Portfolio | Contact
                     </div>
                 </div>
 
-                <div class="item-wrapper wow mb-4 zoomIn slow">
+                <div class="item-wrapper mb-4">
                     <div class="item d-flex">
                         <div class="item-icon">
                             <i class="far fa-envelope"></i>
@@ -122,19 +79,22 @@ Portfolio | Contact
             </div>
 
 
-            <div class="col-md-6 col-sm-12 px-3 mr-3">
+            <div class="col-md-6">
                 <!-- Material form login -->
 
-                {% if message %}
+                {% if messages %}
                 <div class="jumbotron text-center my-5">
-                    {{message|safe}}
+                    <ul class="messages">
+                        {% for message in messages %}
+                        <li {% if message.tags %} class="{{message.tags}}" {% endif %}>{{message|safe}}</li>
+                        {% endfor %}
+                    </ul>
                 </div>
 
-
                 {% else %}
-                <div class="card mt-5 animated wow zoomIn data-wow-delay='0.4s'">
+                <div class="card animated wow zoomIn data-wow-delay='0.4s'">
                     <h5 class="card-header text-center py-3">
-                        <strong>Connect</strong>
+                        <strong>Would like to hear from you!</strong>
                     </h5>
                     <!--Card content-->
                     <div class="card-body px-lg-5">
@@ -144,17 +104,13 @@ Portfolio | Contact
                             {{form|crispy}}
                             <!-- Sign in button -->
                             <input type="hidden" name="next" value="{{ next }}" />
-                            <button class="btn purple-gradient mt-5" type="submit">Submit</button>
+                            <button class="btn purple-gradient mt-5" type="submit">Connect</button>
 
                         </form>
                     </div>
                 </div>
                 {% endif %}
-
-
             </div>
-
-
         </div>
 
     </div>

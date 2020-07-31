@@ -1,8 +1,9 @@
 from django.shortcuts import render, HttpResponse
 from django.views.generic import TemplateView, CreateView
+from django.contrib import messages
 from .models import Contact
 from .forms import ContactForm
-from django.forms import BaseForm
+from django.forms import BaseModelForm
 
 
 class HomeView(TemplateView):
@@ -17,18 +18,13 @@ class ContactView(CreateView):
     model = Contact
     template_name = "portfolio/contact.html"
     form_class = ContactForm
+    success_url = "/contact/"
 
-    def get(self, request, *args, **kwargs) -> HttpResponse:
-        form = ContactForm()
-        context = {"form": form, "message": None}
-        return render(request, self.template_name, context)
-
-    def post(self, request, *args, **kwargs) -> HttpResponse:
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            form.save()
-            message = "Thank You for submitting you query.<br> \
-                       We will get in touch with you soon!!"
-            context = {"form": form, "message": message}
-            return render(request, self.template_name, context)
+    def form_valid(self, form: BaseModelForm) -> HttpResponse:
+        form.save()
+        messages.success(
+            self.request,
+            "Thank You for submitting you query.<br>We will get in touch with you soon!!",
+        )
+        return super().form_valid(form)
 
